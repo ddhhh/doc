@@ -1,6 +1,6 @@
 #本地设置ssh key
 ssh-keygen -t rsa -C "邮箱2"
-#opy rsa
+#copy rsa
 #github 配置rsa
 #关联远程仓库
 git remote add origin master git@github.com:ddhhh/doc.git
