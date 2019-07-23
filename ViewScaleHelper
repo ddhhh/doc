@@ -1,0 +1,55 @@
+package mobi.soulgame.littlegamecenter.common;
+
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class ViewClickScaleHelper {
+    private long mLastClickTime;
+    private static final long ACTION_ANIMATOR_DURATION = 60;
+    public  void setView(View view) {
+
+        final AnimatorSet actionDownAnimator = getAnimatorSet(view, 1.0f, 0.94f);
+        final AnimatorSet actionUpAnimator = getAnimatorSet(view, 0.94f, 1f);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(final View v, final MotionEvent event) {
+                      switch (event.getAction()) {
+                          case MotionEvent.ACTION_DOWN:
+                              actionDownAnimator.start();
+                                break;
+                          case MotionEvent.ACTION_UP:
+                          case MotionEvent.ACTION_CANCEL:
+                              actionUpAnimator.start();
+                              if (MotionEvent.ACTION_UP == event.getAction()) {
+                                  v.postDelayed(new Runnable() {
+                                      @Override
+                                      public void run() {
+                                          if (System.currentTimeMillis() - mLastClickTime > 1500) {
+                                              mLastClickTime = System.currentTimeMillis();
+                                              v.performClick();
+                                          }
+                                      }
+                                  },  120);
+                              }
+                                break;
+                      }
+                return true;
+            }
+        });
+
+
+    }
+
+
+    private AnimatorSet getAnimatorSet(View v, float start, float end) {
+        ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(v, "scaleX", start, end);
+        ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(v, "scaleY", start, end);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(objectAnimatorX, objectAnimatorY);
+        animatorSet.setDuration(ACTION_ANIMATOR_DURATION);
+        return animatorSet;
+    }
+
+}
