@@ -1,0 +1,94 @@
+##2019.5.18 Shopee
+* handler 的机制和原理。postdelay 如何实现
+* 自定义view 的机制和原理
+* view事件的分发，move return
+* okhttp 
+##2019.5.24 魅族
+* 面试没水平
+
+##2019.5.28 猎豹移动
+* hadnler，postRunnable
+* SharedPreferences
+* jvm
+* 多进程
+* 多线程（性能优化？）
+* 内存优化
+* syncronized lock 区别原理 死锁
+* http https 区别， 1.0 2.0 区别
+* tcp 三次握手 4次挥手
+* 插件化
+
+
+
+##2019.7.20 泰迪熊
+* GC_ROOT 的对象有哪些
+
+* 两个链表相加
+
+* 两数求平均值（位运算）
+
+
+* protobuffer 为什么省流量
+
+
+* aidl oneway 原理
+
+
+* 最后需要问的问题？？？
+
+
+* im表是怎么设计的
+
+* 为什么要发心跳
+
+* 设计模式
+* 命令模式
+* 观察者模式
+
+##2019.10.10 传音
+* ArrayMap 和 HashMap
+* AIDL 同步异步？
+* Glide 缓存原理
+* 子线程创建Handler postDelay（1000 * 15） postDelay（1000 * 10） Thread.sleep(1000 * 10) 还会执行吗？
+* ANR
+* JNI
+* 线程池
+
+
+
+#面试总结
+* Handler Looper MessageQueue ThreadLocal
+* ArrayMap HashMap 区别
+* Glide 原理
+* AIDL Binder机制原理
+* Retrofit 原理
+* View事件的分发
+* ANR 怎么触发的，如何解决
+* 导致oom的原因
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
